@@ -1,0 +1,25 @@
+/* Label para do botão de pegar arquivos */
+#get-files-label div {
+    display: flex;
+
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+.label-click-animation {
+    animation: label-click-animation .5s;
+}
+
+#get-files-label svg {
+    width: 50px;
+
+    fill: var(--color03);
+}
+
+/* Botão para selecionar arquivos */
+#files-button {
+    display: none;
+}

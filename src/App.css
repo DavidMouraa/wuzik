@@ -1,7 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* Variaveis */
+:root {
+  /* Cores */
+  --color01: rgb(22, 22, 22);
+  --color02: rgb(35, 15, 75);
+  --color03: rgb(108, 199, 230);
+
+  --color01Trans: rgba(35, 35, 35, 0.800);
+  --color02Trans: rgba(45, 45, 45, 0.800);
+
+  /* Fontes */
+  --font01: "Poppins", sans-serif;
+}
+
 /* Estilos globais */
 * {
   box-sizing: border-box;
 
   padding: 0;
   margin: 0;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+
+  background-color: var(--color02);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color03);
+
+  border-radius: 10px;
+}
+
+/* Estilos do corpo da página */
+body {
+  min-height: 100vh;
+
+  background-color: var(--color01);
+
+  font-family: var(--font01);
+}
+
+
+.visible {
+  display: flex;
+}
+
+.invisible {
+  display: none;
 }
