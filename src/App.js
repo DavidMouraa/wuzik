@@ -9,6 +9,8 @@ import Home from './pages/Home';
 
 function App() {
   const [audioList, setAudioList] = useState([]);
+  const [propertyFile, setPropertyFile] = useState();
+  const [propertyVisibilite, setPropertyVisibilite] = useState("property-invisible");
 
   // Pega os arquivos de audio que o usuario arrastou ou selecionou
   const getAudioFiles = (event) => {
@@ -43,7 +45,12 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home 
         audioList={audioList}
-        getAudioFiles={getAudioFiles}/>} />
+        setAudioList={setAudioList}
+        getAudioFiles={getAudioFiles}
+        propertyVisibilite={propertyVisibilite}
+        setPropertyVisibilite={setPropertyVisibilite}
+        propertyFile={propertyFile}
+        setPropertyFile={setPropertyFile} />} />
       </Routes>
     </BrowserRouter>
   );

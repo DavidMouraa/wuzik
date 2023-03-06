@@ -1,0 +1,10 @@
+@keyframes render-audio {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0%;
+        opacity: 1;
+    }
+}

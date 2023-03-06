@@ -8,7 +8,7 @@ import GetFilesButton from "../GetFilesButton";
 import RenderAudio from "../RenderAudio";
 
 const AudioLibrary = (props) => {
-    const {audioList, getAudioFiles} = props;
+    const {audioList, setAudioList, getAudioFiles} = props;
 
     const [warningDragState, setWarningDragState] = useState("desactive");
     const [warningVisibilite, setWarningVisibilite] = useState("visible");
@@ -31,7 +31,6 @@ const AudioLibrary = (props) => {
         setWarningVisibilite(audioList.length !== 0 ? "invisible" : "visible");
         setAudioListVisibilite(audioList.length !== 0 ? "visible" : "invisible");
 
-        console.log(audioList);
     }, [audioList]);
 
     useEffect(() => {
@@ -49,16 +48,21 @@ const AudioLibrary = (props) => {
             className={`${warningDragState} ${warningVisibilite}`}>
                 <p>Arraste os arquivos aqui ou...</p>
                 <GetFilesButton 
-                getAudioFiles={getAudioFiles}/>
+                getAudioFiles={getAudioFiles} />
             </div>
 
             <div 
             id="audio-list"
             className={audioListVisibilite}>
-                {audioList.map((audio, index) => (
+                {audioList.map((file, index) => (
                     <RenderAudio
                     key={index}
-                    audio={audio}/>
+                    file={file}
+                    audioList={audioList}
+                    setAudioList={setAudioList}
+                    propertyVisibilite={props.propertyVisibilite}
+                    setPropertyVisibilite={props.setPropertyVisibilite}
+                    setPropertyFile={props.setPropertyFile} />
                 ))}
             </div>
         </div>

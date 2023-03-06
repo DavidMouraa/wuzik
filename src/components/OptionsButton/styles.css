@@ -1,0 +1,88 @@
+.options-button {
+    position: relative;
+
+    display: flex;
+
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+
+    cursor: pointer;
+}
+
+.options-button svg {
+    width: 15px;
+}
+
+.options-menu {
+    z-index: 10;
+
+    position: absolute;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+
+    list-style: none;
+
+    transform: translateX(-100%);
+    backdrop-filter: blur(7px);
+    overflow-y: scroll;
+    cursor: default;
+
+    transition: .2s;
+}
+
+.options-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.options-menu li {
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+    font-size: 1.1em;
+
+    transition: .1s;
+
+    cursor: pointer;
+}
+
+.options-menu li svg {
+    width: 16px;
+
+    margin-right: 5px;
+
+    stroke: var(--color01);
+}
+
+.menu-aberto {
+    bottom: 100%;
+    left: 100%;
+
+    height: max-content;
+    opacity: 1;
+}
+
+.menu-fechado {
+    height: 0;
+    opacity: 0;
+}
+
+/* Cores */
+.options-button svg {
+    fill: var(--color01);
+}
+
+.options-menu {
+    background-color: var(--color01Trans);
+    color: var(--color01);
+}
+
+.options-menu li:hover {
+    background-color: var(--color02Trans);
+}

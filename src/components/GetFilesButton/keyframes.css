@@ -1,4 +1,4 @@
-@keyframes label-click-animation {
+@keyframes click-animation {
     0% {
         background-color: rgba(0, 0, 0, 0);
     }

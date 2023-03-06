@@ -9,17 +9,20 @@
     cursor: pointer;
 }
 
-.label-click-animation {
-    animation: label-click-animation .5s;
+.click-animation {
+    animation: click-animation .5s;
 }
 
 #get-files-label svg {
     width: 50px;
-
-    fill: var(--color03);
 }
 
 /* Botão para selecionar arquivos */
 #files-button {
     display: none;
+}
+
+/* Cores */
+#get-files-label svg {
+    fill: var(--color01);
 }

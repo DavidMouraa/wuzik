@@ -3,15 +3,15 @@ import "./keyframes.css";
 
 import { useRef } from "react";
 
-import AddIcon from "../../Icons";
+import { AddIcon } from "../../Icons";
 
 const GetFilesButton = (props) => {
     const {getAudioFiles} = props;
 
     const getFilesLabelDivRef = useRef(null);
 
-    const switchLabelClickAnimation = () => {
-        getFilesLabelDivRef.current.classList.toggle("label-click-animation");
+    const switchClickAnimation = () => {
+        getFilesLabelDivRef.current.classList.toggle("click-animation");
     }
 
     return (
@@ -21,8 +21,8 @@ const GetFilesButton = (props) => {
             id="get-files-label">
                 <div
                 ref={getFilesLabelDivRef}
-                onClick={switchLabelClickAnimation}
-                onAnimationEnd={switchLabelClickAnimation}>
+                onClick={switchClickAnimation}
+                onAnimationEnd={switchClickAnimation}>
                     <AddIcon />
                 </div>
             </label>
