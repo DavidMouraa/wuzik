@@ -17,7 +17,6 @@ const RenderAudio = (props) => {
 
     const [audioDuration, setAudioDuration] = useState();
     const [displayName, setDisplayName] = useState(name);
-    const [checkboxStatus, setCheckboxStatus] = useState();
 
     const audioRef = useRef(null);
     const renameAudioRef = useRef(null);
