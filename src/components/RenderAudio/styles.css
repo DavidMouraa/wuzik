@@ -15,6 +15,9 @@
 
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.400);
 
+    background-color: var(--color02);
+    color: var(--color01);
+
     font-size: .8em;
 }
 
@@ -36,15 +39,15 @@
     align-items: center;
 }
 
-/* Canto direito */
+/* Check-box */
 .check-box {
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-right: 5px;
-
     border-radius: 3px;
+    border: 2px solid var(--color01);
 
     cursor: pointer;
 
@@ -53,22 +56,10 @@
 
 .check-box svg {
     width: 10px;
-}
 
-/* Cores */
-#box-audio {
-    background-color: var(--color02);
-    color: var(--color01);
-}
-
-.check-box {
-    border: 2px solid var(--color01);
-}
-
-.check-box svg {
     fill: var(--color02);
 }
 
-.check-box:hover {
+.check-box-enabled {
     background-color: var(--color01);
 }
