@@ -6,8 +6,6 @@ import DisplayProperty from "../../components/DisplayProperty";
 const Home = (props) => {
     return (
         <div id="home">
-            
-
             <AudioLibrary 
             audioList={props.audioList}
             setAudioList={props.setAudioList}

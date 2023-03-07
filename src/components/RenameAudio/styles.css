@@ -1,0 +1,17 @@
+#input-rename {
+    display: flex;
+
+    border: 0;
+    border-radius: 2px;
+    padding: 1px 5px;
+
+    background-color: var(--color01);
+    color: var(--color02);
+
+    font-family: var(--font01);
+    font-size: 1em;
+}
+
+#input-rename:focus {
+    outline: 0;
+}

@@ -25,8 +25,13 @@ class CreateAudio {
         this.format = getFileFormat(file);
         this.duration = "0:00";
         this.size = `${formatBytesForMegabytes(file.size)}MB`;
+
         this.setDuration = (newDuration) => {
             this.duration = newDuration;
+        }
+
+        this.setFileName = (newName) => {
+            this.name = newName;
         }
     }
 }
