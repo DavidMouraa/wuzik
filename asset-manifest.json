@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wuzik/static/css/main.70d0376a.css",
+    "main.js": "/wuzik/static/js/main.8e2433e5.js",
+    "index.html": "/wuzik/index.html",
+    "main.70d0376a.css.map": "/wuzik/static/css/main.70d0376a.css.map",
+    "main.8e2433e5.js.map": "/wuzik/static/js/main.8e2433e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70d0376a.css",
+    "static/js/main.8e2433e5.js"
+  ]
+}
