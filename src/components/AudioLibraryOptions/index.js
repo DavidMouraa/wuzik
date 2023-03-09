@@ -1,14 +1,11 @@
 import "./styles.css";
 
+import { TrashCanIcon } from "../../Icons";
+
 import Checkbox from "../Checkbox";
-import { useEffect } from "react";
 
 const AudioLibraryOptions = (props) => {
-    const {allFileSelected, setAllFileSelected, checkboxRef} = props;
-
-    useEffect(() => {
-
-    });
+    const {allFileSelected, setAllFileSelected} = props;
 
     return(
         <div id="audio-library-options">
@@ -17,6 +14,11 @@ const AudioLibraryOptions = (props) => {
                 <Checkbox 
                 setAllFileSelected={setAllFileSelected}
                 allFileSelected={allFileSelected} />
+            </div>
+            <div id="selected-options">
+                <div>
+                    <TrashCanIcon/>
+                </div>
             </div>
         </div>
     );

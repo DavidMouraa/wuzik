@@ -12,7 +12,7 @@ import RenameAudio from "../RenameAudio";
 import Checkbox from "../Checkbox";
 
 const RenderAudio = (props) => {
-    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile, allFileSelected, checkboxRef} = props;
+    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile, allFileSelected} = props;
     const {name, audio, setDuration, switchSelected} = file;
 
     const [audioDuration, setAudioDuration] = useState();

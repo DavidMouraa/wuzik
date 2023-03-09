@@ -4,13 +4,11 @@ import { useEffect, useRef } from "react";
 
 import { OptionsIcon } from "../../Icons";
 
+import Button from "../Button";
+
 const OptionsButton = (props) => {
     const optionsButtonRef = useRef(null);
     const optionsMenuRef = useRef(null);
-
-    const switchOptionsClickAnimation = () => {
-        optionsButtonRef.current.classList.toggle("click-animation");
-    }
 
     const switchMenuOptionsState = (event) => {
         event.preventDefault();
@@ -42,17 +40,17 @@ const OptionsButton = (props) => {
     }, []);
 
     return (
-        <div 
-        ref={optionsButtonRef}
-        className="options-button"
-        onClick={switchOptionsClickAnimation}
-        onAnimationEnd={switchOptionsClickAnimation}>
-            <OptionsIcon />
-            <ul 
-            ref={optionsMenuRef} 
-            className="options-menu menu-fechado">
-                {props.children}
-            </ul>
+        <div
+        ref={optionsButtonRef}>
+            <Button
+            classNames={"options-button"}>
+                <OptionsIcon />
+                <ul
+                ref={optionsMenuRef}
+                className="options-menu menu-fechado">
+                    {props.children}
+                </ul>
+            </Button>
         </div>
     );
 }

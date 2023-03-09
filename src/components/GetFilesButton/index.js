@@ -5,26 +5,19 @@ import { useRef } from "react";
 
 import { AddIcon } from "../../Icons";
 
+import Button from "../Button";
+
 const GetFilesButton = (props) => {
     const {getAudioFiles} = props;
-
-    const getFilesLabelDivRef = useRef(null);
-
-    const switchClickAnimation = () => {
-        getFilesLabelDivRef.current.classList.toggle("click-animation");
-    }
 
     return (
         <div >
             <label 
             htmlFor="files-button"
             id="get-files-label">
-                <div
-                ref={getFilesLabelDivRef}
-                onClick={switchClickAnimation}
-                onAnimationEnd={switchClickAnimation}>
+                <Button>
                     <AddIcon />
-                </div>
+                </Button>
             </label>
             <input 
             id="files-button"
