@@ -1,5 +1,5 @@
 /* Caixa que renderiza o áudio */
-#box-audio {
+.box-audio {
     position: relative;
 
     width: 100%;
@@ -11,7 +11,7 @@
 
     padding: 0 10px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
 
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.400);
 
@@ -21,7 +21,7 @@
     font-size: .8em;
 }
 
-#box-audio::-webkit-scrollbar {
+.box-audio::-webkit-scrollbar {
     display: none;
 }
 
@@ -39,13 +39,16 @@
     align-items: center;
 }
 
+.audio-name {
+    margin-left: 5px;
+}
+
 /* Check-box */
 .check-box {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin-right: 5px;
     border-radius: 3px;
     border: 2px solid var(--color01);
 

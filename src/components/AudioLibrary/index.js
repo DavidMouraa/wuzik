@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import GetFilesButton from "../GetFilesButton";
 import RenderAudio from "../RenderAudio";
+import AudioLibraryOptions from "../AudioLibraryOptions";
 
 const AudioLibrary = (props) => {
     const {audioList, setAudioList, getAudioFiles} = props;
@@ -13,6 +14,7 @@ const AudioLibrary = (props) => {
     const [warningDragState, setWarningDragState] = useState("desactive");
     const [warningVisibilite, setWarningVisibilite] = useState("visible");
     const [audioListVisibilite, setAudioListVisibilite] = useState("visible");
+    const [allFileSelected, setAllFileSelected] = useState(false);
 
     const audioLibraryRef = useRef(null);
 
@@ -54,6 +56,10 @@ const AudioLibrary = (props) => {
             <div 
             id="audio-list"
             className={audioListVisibilite}>
+                <AudioLibraryOptions
+                setAllFileSelected={setAllFileSelected}
+                allFileSelected={allFileSelected} />
+
                 {audioList.map((file, index) => (
                     <RenderAudio
                     key={index}
@@ -62,7 +68,8 @@ const AudioLibrary = (props) => {
                     setAudioList={setAudioList}
                     propertyVisibilite={props.propertyVisibilite}
                     setPropertyVisibilite={props.setPropertyVisibilite}
-                    setPropertyFile={props.setPropertyFile} />
+                    setPropertyFile={props.setPropertyFile}
+                    allFileSelected={allFileSelected} />
                 ))}
             </div>
         </div>

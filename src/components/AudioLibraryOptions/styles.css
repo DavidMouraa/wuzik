@@ -1,0 +1,13 @@
+#audio-library-options {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+#all-checkboxs {
+    border-radius: 10px;
+    padding: 10px;
+
+    background-color: var(--color02);
+}

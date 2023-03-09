@@ -35,8 +35,8 @@ class CreateAudio {
             this.name = newName;
         }
 
-        this.switchSelected = () => {
-            this.selected = !this.selected;
+        this.switchSelected = (newSelected) => {
+            this.selected = newSelected;
         }
     }
 }

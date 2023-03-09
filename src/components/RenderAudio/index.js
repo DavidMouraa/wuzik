@@ -12,8 +12,8 @@ import RenameAudio from "../RenameAudio";
 import Checkbox from "../Checkbox";
 
 const RenderAudio = (props) => {
-    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile} = props;
-    const {name, audio, setDuration} = file;
+    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile, allFileSelected, checkboxRef} = props;
+    const {name, audio, setDuration, switchSelected} = file;
 
     const [audioDuration, setAudioDuration] = useState();
     const [displayName, setDisplayName] = useState(name);
@@ -21,7 +21,6 @@ const RenderAudio = (props) => {
     const audioRef = useRef(null);
     const renameAudioRef = useRef(null);
     const renameAudioOptionRef = useRef(null);
-    const checkboxRef = useRef(null);
 
     // Remove o audio da lista de audios
     const removeAudio = () => {
@@ -37,12 +36,6 @@ const RenderAudio = (props) => {
         if (!wasOnMe && displayName !== name) {
             setDisplayName(name);
         }
-    }
-
-    // Troca os status de seleção do arquivo
-    const switchFileSelectionStatus = () => {
-        checkboxRef.current.classList.toggle("check-box-enabled");
-        file.switchSelected();
     }
 
     useEffect(() => {
@@ -66,12 +59,12 @@ const RenderAudio = (props) => {
     return (
         <div 
         ref={audioRef}
-        id="box-audio"
-        className="render-audio">
+        className="box-audio render-audio">
             <div className="box-audio-corner box-audio-corner-right">
                 <Checkbox 
-                checkboxRef={checkboxRef}
-                switchFileSelectionStatus={switchFileSelectionStatus} />
+                file={file}
+                switchSelected={switchSelected}
+                allFileSelected={allFileSelected} />
 
                 <span 
                 ref={renameAudioRef} 
