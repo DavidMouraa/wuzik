@@ -12,19 +12,19 @@ const Button = (props) => {
         buttonRef.current.classList.toggle("click-animation");
     }
 
-    const checkIfEventsExist = () => {
+    const checkIfEventsExist = (event) => {
         if (clickEvents !== undefined) {
-            clickEvents();
+            clickEvents(event);
         }
     }
 
     return(
         <div 
         ref={buttonRef}
-        className={`${classNames}`}
+        className={`button ${classNames}`}
         onClick={(event) => {
             switchButtonClickAnimation();
-            checkIfEventsExist();
+            checkIfEventsExist(event);
         }}
         onAnimationEnd={switchButtonClickAnimation}>
             {props.children}

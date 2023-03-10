@@ -1,7 +1,4 @@
 import "./styles.css";
-import "./keyframes.css";
-
-import { useRef } from "react";
 
 import { AddIcon } from "../../Icons";
 

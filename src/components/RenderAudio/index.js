@@ -12,8 +12,8 @@ import RenameAudio from "../RenameAudio";
 import Checkbox from "../Checkbox";
 
 const RenderAudio = (props) => {
-    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile, allFileSelected} = props;
-    const {name, audio, setDuration, switchSelected} = file;
+    const {audioList, setAudioList, file, setPropertyVisibilite, setPropertyFile} = props;
+    const {name, audio, setDuration} = file;
 
     const [audioDuration, setAudioDuration] = useState();
     const [displayName, setDisplayName] = useState(name);
@@ -63,8 +63,8 @@ const RenderAudio = (props) => {
             <div className="box-audio-corner box-audio-corner-right">
                 <Checkbox 
                 file={file}
-                switchSelected={switchSelected}
-                allFileSelected={allFileSelected} />
+                audioList={audioList}
+                setAudioList={setAudioList} />
 
                 <span 
                 ref={renameAudioRef} 

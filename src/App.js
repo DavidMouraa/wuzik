@@ -31,7 +31,7 @@ function App() {
         const dotIndex = name.lastIndexOf(".");
         const format = name.slice(dotIndex, name.length);
 
-        if (format === ".mp3" || format === ".wav") {
+        if (format === ".mp3" || format === ".wav" || ".ogg") {
             const audio = new CreateAudio(files[i]);
             audioFiles.push(audio);
         }

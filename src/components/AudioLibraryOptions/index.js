@@ -3,22 +3,29 @@ import "./styles.css";
 import { TrashCanIcon } from "../../Icons";
 
 import Checkbox from "../Checkbox";
+import Button from "../Button";
 
 const AudioLibraryOptions = (props) => {
-    const {allFileSelected, setAllFileSelected} = props;
+    const {audioList, setAudioList} = props;
+
+    const removeSelectedAudio = () => {
+        setAudioList(audioList.filter((item) => !item.selected));
+    }
 
     return(
         <div id="audio-library-options">
             <div 
-            id="all-checkboxs">
+            id="all-checkboxes">
                 <Checkbox 
-                setAllFileSelected={setAllFileSelected}
-                allFileSelected={allFileSelected} />
+                whichCheckbox={"all"}
+                setAudioList={setAudioList} />
             </div>
             <div id="selected-options">
-                <div>
+                <Button
+                clickEvents={removeSelectedAudio}
+                classNames={"remove-selected"}>
                     <TrashCanIcon/>
-                </div>
+                </Button>
             </div>
         </div>
     );

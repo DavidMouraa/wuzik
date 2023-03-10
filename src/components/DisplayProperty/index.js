@@ -9,7 +9,8 @@ const DisplayProperty = (props) => {
         <section id="property-display" className={propertyVisibilite}>
             <button 
             id="close-property-button"
-            onClick={() => setPropertyVisibilite("property-invisible")}>
+            onClick={() => setPropertyVisibilite("property-invisible")}
+            title="Fechar">
                 <CrossIcon/>
             </button>
 

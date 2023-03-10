@@ -58,7 +58,9 @@ const AudioLibrary = (props) => {
             className={audioListVisibilite}>
                 <AudioLibraryOptions
                 setAllFileSelected={setAllFileSelected}
-                allFileSelected={allFileSelected} />
+                allFileSelected={allFileSelected}
+                audioList={audioList}
+                setAudioList={setAudioList} />
 
                 {audioList.map((file, index) => (
                     <RenderAudio

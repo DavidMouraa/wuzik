@@ -12,18 +12,25 @@
     justify-content: center;
     align-items: center;
 
-   padding: 0 10px; 
-    border-radius: 10px;
-
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.400);
+    padding: 0 10px;
 
     background-color: var(--color02);
 }
 
+#all-checkboxes {
+    border-right: 2px solid var(--color01);
+    border-radius: 10px 0 0 10px;
+}
+
 #selected-options {
-    margin-left: 10px;
+    border-radius: 0 10px 10px 0;
 
     background-color: red;
+}
+
+#selected-options div {
+    border-radius: 10px;
+    padding: 5px;
 }
 
 #selected-options svg {

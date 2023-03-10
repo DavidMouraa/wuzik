@@ -19,7 +19,7 @@ const formatBytesForMegabytes = (bytes) => {
 class CreateAudio {
     constructor(file) {
         this.file = file;
-        this.audio = new Audio(URL.createObjectURL(file));
+        this.audio = new Audio(URL.createObjectURL(file));;
         this.audio.preload = "auto";
         this.name = getFileName(file);
         this.format = getFileFormat(file);
@@ -33,10 +33,6 @@ class CreateAudio {
 
         this.setFileName = (newName) => {
             this.name = newName;
-        }
-
-        this.switchSelected = (newSelected) => {
-            this.selected = newSelected;
         }
     }
 }

@@ -5,37 +5,57 @@ import { CheckIcon } from "../../Icons";
 import { useRef, useEffect } from "react";
 
 const Checkbox = (props) => {
-    const {allFileSelected, setAllFileSelected, switchSelected, file} = props;
+    const {file, audioList, setAudioList, whichCheckbox} = props;
 
     const checkboxRef = useRef(null);
 
-    const switchCheckboxStatus = () => {
+    const switchAllCheckboxesStatus = () => {
         checkboxRef.current.classList.toggle("check-box-enabled");
-        if (switchSelected) {
-            switchSelected(!file?.selected);
-        }
+        setAudioList(prevState => {
+            const newList = [...prevState];
+
+            for (let i = 0; i < newList.length; i++) {
+                newList[i] = {...newList[i], selected: !newList[i].selected};
+            }
+
+            return newList;
+        })
+    }
+
+    const switchThisCheckboxStatus = () => {
+        const myIndex = audioList.indexOf(file);
+        setAudioList(prevState => {
+            const newList = [...prevState];
+
+            newList[myIndex] = {...newList[myIndex], selected: !file.selected};
+
+            return newList
+        });
     }
 
     useEffect(() => {
-        if (allFileSelected !== undefined && switchSelected) {
-            if (allFileSelected) {
+        if(file)
+        {
+            if (file.selected) {
                 checkboxRef.current.classList.add("check-box-enabled");
-                switchSelected(true);
-            } 
+            }
             else {
                 checkboxRef.current.classList.remove("check-box-enabled");
-                switchSelected(false);
             }
         }
-    }, [allFileSelected]);
+    }, [audioList, file]);
 
     return (
         <div 
         ref={checkboxRef}
         className={`check-box`}
         onClick={() => {
-            switchCheckboxStatus();
-            if (setAllFileSelected) {setAllFileSelected(!allFileSelected)};
+            if (whichCheckbox === "all") {
+                switchAllCheckboxesStatus();
+            } 
+            else {
+                switchThisCheckboxStatus();
+            }
         }}>
             <CheckIcon />
         </div>

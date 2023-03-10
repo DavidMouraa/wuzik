@@ -42,27 +42,3 @@
 .audio-name {
     margin-left: 5px;
 }
-
-/* Check-box */
-.check-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 3px;
-    border: 2px solid var(--color01);
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.check-box svg {
-    width: 10px;
-
-    fill: var(--color02);
-}
-
-.check-box-enabled {
-    background-color: var(--color01);
-}
